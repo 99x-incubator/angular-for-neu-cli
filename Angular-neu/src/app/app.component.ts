@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {AppLib} from '../app-core/lib';
 
 @Component({
   selector: 'app-root',
@@ -8,3 +9,24 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'Angular-neu';
 }
+
+let appLib = new AppLib();
+
+let myapp: any = {
+    myfunction : function () { document.getElementById('info').innerHTML = NL_NAME + " is running on port " +
+                    NL_PORT + " inside " + NL_OS + "<br/><br/>" + "<span>v" + NL_VERSION + "</span>"; }
+};
+
+Neutralino.init({
+  load: function() {
+      myapp.myfunction();
+      appLib.showSettings();
+  },
+  pingSuccessCallback : function() {
+
+  },
+  pingFailCallback : function() {
+
+  }
+});
+
