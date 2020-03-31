@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import {AppLib} from '../app-core/lib';
-
+ 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -13,14 +13,14 @@ export class AppComponent {
 let appLib = new AppLib();
 
 let myapp: any = {
-    myfunction : function () { document.getElementById('info').innerHTML = NL_NAME + " is running on port " +
-                    NL_PORT + " inside " + NL_OS + "<br/><br/>" + "<span>v" + NL_VERSION + "</span>"; }
+    myfunction : function () { }
 };
 
 Neutralino.init({
   load: function() {
       myapp.myfunction();
       appLib.showSettings();
+      
   },
   pingSuccessCallback : function() {
 
